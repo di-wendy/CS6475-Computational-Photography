@@ -1,7 +1,7 @@
 #Image Processing
 
 ##Image read/display
-1. cv2.imread()
+###1. cv2.imread()
 
 img1 = cv2.imread(path.join(IMG_FOLDER, "template.jpg"),cv2.IMREAD_GRAYSCALE)
 
@@ -12,8 +12,10 @@ Note Instead of these three flags, you can simply pass integers 1, 0 or -1 respe
 
 plt.imshow(img1,cmap='Greys_r'),plt.show()
 
+###2.Draw line and Circles
 
-2. Match Features
+
+###3. Match Features
 Python: cv2.ORB.detectAndCompute(image, mask[, descriptors[, useProvidedKeypoints]]) → keypoints, descriptors
 Parameters:	
 image – The input 8-bit grayscale image.
@@ -26,26 +28,26 @@ Keypoint is a class
 1) print kp1[0].pt Location of the keypoint
 
 DMatch is struct
-struct DMatch
-{
-    DMatch() : queryIdx(-1), trainIdx(-1), imgIdx(-1),
-               distance(std::numeric_limits<float>::max()) {}
-    DMatch( int _queryIdx, int _trainIdx, float _distance ) :
-            queryIdx(_queryIdx), trainIdx(_trainIdx), imgIdx(-1),
-            distance(_distance) {}
-    DMatch( int _queryIdx, int _trainIdx, int _imgIdx, float _distance ) :
-            queryIdx(_queryIdx), trainIdx(_trainIdx), imgIdx(_imgIdx),
-            distance(_distance) {}
+    struct DMatch
+    {
+        DMatch() : queryIdx(-1), trainIdx(-1), imgIdx(-1),
+                   distance(std::numeric_limits<float>::max()) {}
+        DMatch( int _queryIdx, int _trainIdx, float _distance ) :
+                queryIdx(_queryIdx), trainIdx(_trainIdx), imgIdx(-1),
+                distance(_distance) {}
+        DMatch( int _queryIdx, int _trainIdx, int _imgIdx, float _distance ) :
+                queryIdx(_queryIdx), trainIdx(_trainIdx), imgIdx(_imgIdx),
+                distance(_distance) {}
 
-    int queryIdx; // query descriptor index
-    int trainIdx; // train descriptor index
-    int imgIdx;   // train image index
+        int queryIdx; // query descriptor index
+        int trainIdx; // train descriptor index
+        int imgIdx;   // train image index
 
-    float distance;
+        float distance;
 
-    // less is better
-    bool operator<( const DMatch &m ) const;
-};
+        // less is better
+        bool operator<( const DMatch &m ) const;
+    };
 
 
 
