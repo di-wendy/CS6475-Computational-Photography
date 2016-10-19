@@ -10,6 +10,7 @@ cv2.IMREAD_GRAYSCALE : Loads image in grayscale mode
 cv2.IMREAD_UNCHANGED : Loads image as such including alpha channel
 Note Instead of these three flags, you can simply pass integers 1, 0 or -1 respectively.
 
+import matplotlib.pyplot as plt
 plt.imshow(img1,cmap='Greys_r'),plt.show()
 
 ###2.Draw line and Circles
