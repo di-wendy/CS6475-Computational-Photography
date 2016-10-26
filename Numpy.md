@@ -12,3 +12,7 @@
              
 ###3.Sorting, searching, and counting
        https://docs.scipy.org/doc/numpy-1.11.0/reference/routines.sort.html
+
+###Solve Linear Algebra
+
+x = np.dot(np.linalg.pinv(mat_A),mat_b)
